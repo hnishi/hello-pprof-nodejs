@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 
-import CheckboxWithLabel from "./CheckboxWithLabel";
+import { CheckboxWithLabelNoSpread } from "./CheckboxWithLabel";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
           Learn React
         </a>
       </header>
-      <CheckboxWithLabel labelOn="On" labelOff="Off" />
+      <CheckboxWithLabelNoSpread labelOn="On" labelOff="Off" />
     </div>
   );
 }
