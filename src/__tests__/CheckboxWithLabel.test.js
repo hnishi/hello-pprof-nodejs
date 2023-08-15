@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import CheckboxWithLabel from "../CheckboxWithLabel";
 
 // Note: running cleanup afterEach is done automatically for you in @testing-library/react@9.0.0 or higher
@@ -6,13 +6,13 @@ import CheckboxWithLabel from "../CheckboxWithLabel";
 afterEach(cleanup);
 
 it("CheckboxWithLabel changes the text after click", () => {
-  const { queryByLabelText, getByLabelText } = render(
+  render(
     <CheckboxWithLabel labelOn="On" labelOff="Off" />
   );
 
-  expect(queryByLabelText(/off/i)).toBeTruthy();
+  expect(screen.getByLabelText(/off/i)).toBeTruthy();
 
-  fireEvent.click(getByLabelText(/off/i));
+  fireEvent.click(screen.getByLabelText(/off/i));
 
-  expect(queryByLabelText(/on/i)).toBeTruthy();
+  expect(screen.getByLabelText(/on/i)).toBeTruthy();
 });
