@@ -35,6 +35,7 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/react": "^14.0.0"
+    "@testing-library/react": "^14.0.0",
+    "pprof": "^3.2.1"
   }
 }
